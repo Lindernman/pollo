@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a  href="/clase00" class="btn btn-ghost normal-case text-xl">Clase 00</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal p-0">
+        <li>
+          <a href="/clase00/home">Home</a>
+        </li>
+
+        <li>
+         <a href="/clase00/tabla">Tabla</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+<div class="m-10">
+{% block content %}
+
+{% endblock %}
+</div>

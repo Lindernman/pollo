@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inicio</title>
+</head>
+
+<body class="p-4">
+    <h1>Indice</h1>
+
+
+    <p> Personas registradas :</p>
+    {% for person in personas %}
+    <p>
+        <div class="flex  gap-4  items-start">
+            <div>
+
+                {{person.id}} - {{person.nombre}}
+            </div>
+            <div>
+                <form action="{% url 'delete_person' person.id %}" type="submit" method="POST">
+                    {% csrf_token %}
+
+
+                    <button class="btn btn-primary btn-xs">
+                        Eliminar
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </p>
+    {% endfor %}
+
+    <p class="mt-10">
+        Registrar nueva persona
+    </p>
+    <form type="submit" method="POST">
+        {% csrf_token %}
+
+        <input id="nombre" type="text" name="nombre" maxlength="100" required />
+        <button class="btn btn-success btn-xs">Registrar</button>
+    </form>
+
+</body>
+
+</html>

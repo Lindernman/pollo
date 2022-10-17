@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html data-theme="emerald" class="bg-slate-400">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+  <title>My Project</title>
+</head>
+
+<body class="flex flex-col h-screen  bg-slate-400">
+  <div >
+    {% block navbar %}
+
+    {% endblock %}
+
+  </div>
+  <div class="p-2 flex-1 h-full">
+    {% block content %}
+
+    {% endblock %}
+  </div>
+</body>
+
+</html>
